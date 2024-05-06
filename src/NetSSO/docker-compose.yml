@@ -2,6 +2,7 @@ version: '3.4'
 
 services:
   sso.identity:
+    container_name: sso-identity
     image: ${DOCKER_REGISTRY-}sso.identity
     build:
       context: .
@@ -10,6 +11,7 @@ services:
       - "8000" 
 
   sso.app1:
+    container_name: sso-app1
     image: ${DOCKER_REGISTRY-}sso.app1
     build:
       context: .
@@ -18,7 +20,13 @@ services:
       - "8001"
 
   sso.nginx:
+    container_name: sso-nginx
     image: ${DOCKER_REGISTRY-}sso.nginx
     build:
       context: .
       dockerfile: Dockerfile-nginx
+
+  sso.redis:
+    container_name: sso-redis
+    image: redis:latest
+    
