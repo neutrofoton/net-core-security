@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  sso.identity:
+    container_name: sso-identity
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8000:8080"
+
+  sso.app1:
+    container_name: sso-app1
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development 
+    depends_on:
+      - sso.identity
+    ports:
+      - "8001:8080"
+
+  sso.nginx:
+    container_name: sso-nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - sso.identity  
+      - sso.app1   
+    links:
+      - sso.identity  
+      - sso.app1  
+    ports:
+      - "9000:80"

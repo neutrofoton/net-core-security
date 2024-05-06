@@ -7,6 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleNetCoreSecurityWeb", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlainNetCoreSecurityWeb", "PlainNetCoreSecurityWeb\PlainNetCoreSecurityWeb.csproj", "{D4F20DC2-184F-44C2-86C6-C814C3385A7B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSO", "SSO", "{E6E0E163-0F9F-402F-96C6-1FA427C0ADF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetSSO.Identity", "NetSSO\NetSSO.Identity\NetSSO.Identity.csproj", "{0CFAD86E-9842-4F12-BB6D-4B9F49DB77B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetSSO.App1", "NetSSO\NetSSO.App1\NetSSO.App1.csproj", "{9B37B603-BF37-4510-BED3-9B3D745F3720}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetSSO.App2", "NetSSO\NetSSO.App2\NetSSO.App2.csproj", "{0C8E5339-9A20-491C-B0AD-596675CEC560}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,11 +29,28 @@ Global
 		{D4F20DC2-184F-44C2-86C6-C814C3385A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4F20DC2-184F-44C2-86C6-C814C3385A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4F20DC2-184F-44C2-86C6-C814C3385A7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CFAD86E-9842-4F12-BB6D-4B9F49DB77B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CFAD86E-9842-4F12-BB6D-4B9F49DB77B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CFAD86E-9842-4F12-BB6D-4B9F49DB77B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CFAD86E-9842-4F12-BB6D-4B9F49DB77B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B37B603-BF37-4510-BED3-9B3D745F3720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B37B603-BF37-4510-BED3-9B3D745F3720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B37B603-BF37-4510-BED3-9B3D745F3720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B37B603-BF37-4510-BED3-9B3D745F3720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C8E5339-9A20-491C-B0AD-596675CEC560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C8E5339-9A20-491C-B0AD-596675CEC560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C8E5339-9A20-491C-B0AD-596675CEC560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C8E5339-9A20-491C-B0AD-596675CEC560}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1DC69FFF-70CD-4F64-929B-9761762F8A4E}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0CFAD86E-9842-4F12-BB6D-4B9F49DB77B3} = {E6E0E163-0F9F-402F-96C6-1FA427C0ADF6}
+		{9B37B603-BF37-4510-BED3-9B3D745F3720} = {E6E0E163-0F9F-402F-96C6-1FA427C0ADF6}
+		{0C8E5339-9A20-491C-B0AD-596675CEC560} = {E6E0E163-0F9F-402F-96C6-1FA427C0ADF6}
 	EndGlobalSection
 EndGlobal

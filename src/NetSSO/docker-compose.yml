@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  sso.identity:
+    image: ${DOCKER_REGISTRY-}sso.identity
+    build:
+      context: .
+      dockerfile: Dockerfile-identity
+    expose: 
+      - "8000" 
+
+  sso.app1:
+    image: ${DOCKER_REGISTRY-}sso.app1
+    build:
+      context: .
+      dockerfile: Dockerfile-app1
+    expose: 
+      - "8001"
+
+  sso.nginx:
+    image: ${DOCKER_REGISTRY-}sso.nginx
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
