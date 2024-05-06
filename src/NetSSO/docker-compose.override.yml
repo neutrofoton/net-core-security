@@ -6,6 +6,8 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - "Redis:IpPort=sso-redis:6379"
       - "Redis:Password=123"
+    depends_on:
+      - sso.redis
     ports:
       - "8000:8080"
 
@@ -15,6 +17,7 @@ services:
       - "Redis:IpPort=sso-redis:6379"
       - "Redis:Password=123"
     depends_on:
+      - sso.redis
       - sso.identity
     ports:
       - "8001:8080"
@@ -32,13 +35,13 @@ services:
       - "9000:80"
 
   sso.redis:
-    restart: always
+    # restart: always
     ports:
       - "6379:6379"
     volumes:
       - $HOME/redis/net-sso/dаta:/root/redis
       - $HOME/redis/net-sso/redis.conf:/usr/local/etc/redis/redis.conf
     environment:
-      - REDIS_PASSWORD=123
       - REDIS_PORT=6379
+      #- REDIS_PASSWORD=123
       #- REDIS_DATABASES=16

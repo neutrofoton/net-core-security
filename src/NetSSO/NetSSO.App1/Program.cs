@@ -11,15 +11,19 @@ var redisAddress = builder.Configuration.GetValue<string>("Redis:IpPort");
 var redisPassword = builder.Configuration.GetValue<string>("Redis:Password");
 
 var options = ConfigurationOptions.Parse(redisAddress!); // host1:port1, host2:port2, ...
-options.Password = redisPassword;      
+//options.Password = redisPassword;      
+
 
 builder.Services.AddDataProtection()
-    .PersistKeysToStackExchangeRedis(ConnectionMultiplexer.Connect(options))
+    .PersistKeysToStackExchangeRedis(ConnectionMultiplexer.Connect(options),"DataProtection-Keys")
     .SetApplicationName("neutro");
 
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme);
+    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, o=>
+    {
+        o.Cookie.Domain = ".company.local";
+    });
 
 var app = builder.Build();
 
